@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>自定义高德地图和图上标记</title>
+    <link rel="stylesheet" type="text/css" href="css/index.css">
+    <link rel="stylesheet" type="text/css" href="css/reset.css">
+    <script src="http://webapi.amap.com/maps?v=1.3&key=767e9dbd5c3b01d850a46fd77fe4fde9"></script>
+    <script type="text/javascript" src="http://cache.amap.com/lbs/static/addToolbar.js"></script>
+</head>
+<body>
+    <div class="boss">
+                <div class="content_center">
+                    <div id="container"></div>
+                </div>
+    </div>
+</body>
+<script>
+    // 显示地图
+    var marker, map = new AMap.Map("container", {
+        resizeEnable: true,
+        mapStyle: 'amap://styles/93e4f82efc56fc0590e050c5a8ab3c1d',
+        center:[119.8889332686,36.7727528556],
+        zoom: 15
+    });
+      // 实例化点标记
+      function addMarker() {
+        if (marker) {
+            return;
+        }
+        marker = new AMap.Marker({
+
+            icon: "./images/***自定义图片**.jpg",
+            center:[119.8889332686,36.7727528556],
+        });
+        marker.setMap(map);
+    }
+    addMarker()
+</script>
+</html>
